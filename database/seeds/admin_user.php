@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Encore\Admin\Auth\Database\Administrator;
 use Encore\Admin\Auth\Database\Role;
+use Illuminate\Support\Facades\DB;
 
 class admin_user extends Seeder
 {
@@ -13,40 +14,11 @@ class admin_user extends Seeder
      */
     public function run()
     {
-
-        // create a user.
-        Administrator::truncate();
-        Administrator::create([
+        DB::table('admin_users')->insert([
             'username' => 'araiy',
             'password' => bcrypt('Aq!sw2de3fr4'),
             'name'     => 'Administrator',
         ]);
-
-        // create a role.
-        Role::truncate();
-        Role::create([
-            'name' => 'Administrator',
-            'slug' => 'administrator',
-        ]);
-
-        // add role to user.
-        Administrator::first()->roles()->save(Role::first());
-
-        // 別のユーザー(例:staff）やロールを初期状態で追加しておく場合
-        Administrator::create([
-            'username' => 'staff',
-            'password' => bcrypt('staff'),
-            'name'     => 'staff',
-        ]);
-
-        // create a role.
-        Role::create([
-            'name' => 'staff',
-            'slug' => 'staff',
-        ]);
-
-        // add role to user.
-        Administrator::find(2)->roles()->save(Role::find(2));
-
+     
     }
 }
