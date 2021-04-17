@@ -1,0 +1,142 @@
+CLEARDB_DATABASE_URL: mysql://bed9168d2fc3c2:1ae58436@us-cdbr-east-03.cleardb.com/heroku_235a5270bf55a64?reconnect=true
+
+CLEARDB_DATABASE_URL: mysql://bed9168d2fc3c2: 1ae58436 @us-cdbr-east-03.cleardb.com /heroku_235a5270bf55a64?reconnect=true
+
+CLEARDB_DATABASE_URL:     mysql://UUUUUUUUUUU:PPPPPPP@us-cdbr-east-02.cleardb.net/heroku_DDDDDDDDDDD?reconnect=true
+heroku config
+
+
+mysql -u bed9168d2fc3c2 -p -h us-cdbr-east-03.cleardb.com     heroku_235a5270bf55a64
+Enter password: PPPPPPP
+
+
+1ae58436
+
+heroku config:set DATABASE_URL='mysql://username:password@hostname/database_name?reconnect=true'
+
+mysql -h us-cdbr-east-03.cleardb.com -u bed9168d2fc3c2 -p -D heroku_235a5270bf55a64
+
+
+ heroku config:set DB_DATABASE=heroku_235a5270bf55a64
+ heroku config:set DB_HOST=us-cdbr-east-03.cleardb.com
+ heroku config:set DB_USERNAME=bed9168d2fc3c2
+ heroku config:set DB_PASSWORD=1ae58436
+ heroku config:set CLEARDB_DATABASE_URL=mysql://bed9168d2fc3c2:1ae58436@us-cdbr-east-03.cleardb.com/heroku_235a5270bf55a64?reconnect=true
+
+
+heroku config:unset DATABASE_URL
+
+APP_DEBUG:            false
+APP_ENV:              production
+APP_KEY:              localと同じ
+APP_NAME:             localと同じ
+APP_URL:              https://[アプリ名].herokuapp.com
+BUILDPACK_URL:        https://github.com/heroku/heroku-buildpack-php.git
+CACHE_DRIVER:         localと同じ（file）
+CLEARDB_DATABASE_URL: mysql://[DB_USERNAME]:[DB_PASSWORD]@[DB_HOST]/[DB_DATABASE]?reconnect=true
+DB_CONNECTION:        localと同じ（mysql）
+DB_DATABASE:          CLEARDB_DATABASE_URLの[DB_DATABASE]
+DB_HOST:              CLEARDB_DATABASE_URLの[DB_HOST]
+DB_PASSWORD:          CLEARDB_DATABASE_URLの[DB_PASSWORD]
+DB_USERNAME:          CLEARDB_DATABASE_URLの[DB_USERNAME]
+MAIL_DRIVER:          localと同じ（smtp）
+MAIL_ENCRYPTION:      localと同じ（null）
+MAIL_HOST:            localと同じ（smtp.mailtrap.io）
+MAIL_PASSWORD:        localと同じ
+MAIL_PORT:            localと同じ
+MAIL_USERNAME:        localと同じ
+QUEUE_DRIVER:         localと同じ（sync）
+SESSION_DRIVER:       localと同じ（file）
+
+
+
+
+
+        $table->bigIncrements('id');
+	$table->string('local');
+        $table->string('title')->unique()->nullable(false);
+	$table->string('description')->unique()->nullable(false);
+	$table->string('category');
+        $table->string('image_url')->nullable(false);
+	$table->string('video_url')->nullable(false);
+        $table->boolean('latest_flag')；
+        $table->boolean('delete_flag')；
+        $table->timestamp('updated_at')->useCurrent()->nullable();
+        $table->timestamp('created_at')->useCurrent()->nullable();
+
+php artisan make:migration create_tv_table 
+php artisan make:migration create_tv_ranking_table 
+
+
+
+php artisan migrate:status              // 状態確認
+% php artisan migrate                     // マイグレーション実行
+% composer dump-autoload                  // 「クラスが見つかりません」エラーが発生したら、migrateコマンドを再発行してみる
+% php artisan migrate:refresh             // 初期化→再実行（マイグレーションファイル追加でエラーが出た時など）
+% php artisan migrate:fresh               // 全テーブル削除 →マイグレーション実行
+% php artisan migrate:rollback            // ロールバック（1つ前）
+% php artisan migrate:rollback --step=2   // ロールバック（戻る位置指定）
+% php artisan migrate:reset  
+
+
+
+tv
+id int
+title varchar
+description text
+category  varchar(255) anime,sport, 
+
+image_url
+video_url
+
+latest_flag boolean
+local japan,
+
+created_at date 作成ビ
+updated_at date　
+delete_flag  boolean
+
+
+カラムに UNIQUE 制約をつけることでカラムに重複した値を格納することができなくなります。ここでは MySQL における UNIQUE 制約の使い方について解説します。
+
+
+
+一か月に一回　cron回す
+
+
+
+
+
+tv_ranking 
+
+tv.id int
+count
+
+
+あなたのおすすめ
+osusume_list
+user
+id
+History
+osusume_tv_id
+
+
+ php -d memory_limit=-1 /usr/local/bin/composer require encore/laravel-admin
+
+
+php74-php-intl.x86_64                                                                        7.4.16-1.el7.remi                                                                        @remi-safe
+Available Packages
+php-intl.x86_64                                                                              5.4.16-48.el7                                                                            base
+php-symfony-intl.noarch                                                                      2.8.12-2.el7                                                                             epel
+php54-php-intl.x86_64                                                                        5.4.45-18.el7.remi                                                                       remi-safe
+php55-php-intl.x86_64                                                                        5.5.38-12.el7.remi                                                                       remi-safe
+php56-php-intl.x86_64                                                                        5.6.40-25.el7.remi                                                                       remi-safe
+php70-php-intl.x86_64                                                                        7.0.33-25.el7.remi                                                                       remi-safe
+php71-php-intl.x86_64                                                                        7.1.33-12.el7.remi                                                                       remi-safe
+php72-php-intl.x86_64                                                                        7.2.34-3.el7.remi                                                                        remi-safe
+php73-php-intl.x86_64                                                                        7.3.27-1.el7.remi                                                                        remi-safe
+php80-php-intl.x86_64   
+
+
+ php -d memory_limit=-1 /usr/local/bin/composer require encore/laravel-admin  --ignore-platform-reqs
+composer install --ignore-platform-reqs
