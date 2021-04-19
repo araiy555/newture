@@ -23,6 +23,7 @@ class admin_user extends Seeder
         ]);
 
         DB::table('admin_roles')->insert([
+            'id' => 1,
             'name' => 'Administrator',
             'slug'     => 'administrator',
         ]);
