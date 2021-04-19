@@ -45,30 +45,35 @@ class admin_user extends Seeder
 
         DB::table('admin_permissions')->insert([
             [
+                'id'  => 1,
                 'name'        => 'All permission',
                 'slug'        => '*',
                 'http_method' => '',
                 'http_path'   => '*',
             ],
             [
+                'id'  => 2,
                 'name'        => 'Dashboard',
                 'slug'        => 'dashboard',
                 'http_method' => 'GET',
                 'http_path'   => '/',
             ],
             [
+                'id'  => 3,
                 'name'        => 'Login',
                 'slug'        => 'auth.login',
                 'http_method' => '',
                 'http_path'   => "/auth/login\r\n/auth/logout",
             ],
             [
+                'id'  => 4,
                 'name'        => 'User setting',
                 'slug'        => 'auth.setting',
                 'http_method' => 'GET,PUT',
                 'http_path'   => '/auth/setting',
             ],
             [
+                'id'  => 5,
                 'name'        => 'Auth management',
                 'slug'        => 'auth.management',
                 'http_method' => '',
@@ -77,6 +82,7 @@ class admin_user extends Seeder
         ]);
         DB::table('admin_menu')->insert([
             [
+                'id'  => 1,
                 'parent_id' => 0,
                 'order'     => 1,
                 'title'     => 'Dashboard',
@@ -84,6 +90,7 @@ class admin_user extends Seeder
                 'uri'       => '/',
             ],
             [
+                'id'  => 2,
                 'parent_id' => 0,
                 'order'     => 2,
                 'title'     => 'Admin',
@@ -91,6 +98,7 @@ class admin_user extends Seeder
                 'uri'       => '',
             ],
             [
+                'id'  => 3,
                 'parent_id' => 2,
                 'order'     => 3,
                 'title'     => 'Users',
@@ -98,6 +106,7 @@ class admin_user extends Seeder
                 'uri'       => 'auth/users',
             ],
             [
+                'id'  => 4,
                 'parent_id' => 2,
                 'order'     => 4,
                 'title'     => 'Roles',
@@ -105,6 +114,7 @@ class admin_user extends Seeder
                 'uri'       => 'auth/roles',
             ],
             [
+                'id'  => 5,
                 'parent_id' => 2,
                 'order'     => 5,
                 'title'     => 'Permission',
@@ -112,6 +122,7 @@ class admin_user extends Seeder
                 'uri'       => 'auth/permissions',
             ],
             [
+                'id'  => 6,
                 'parent_id' => 2,
                 'order'     => 6,
                 'title'     => 'Menu',
@@ -119,6 +130,7 @@ class admin_user extends Seeder
                 'uri'       => 'auth/menu',
             ],
             [
+                'id'  => 7,
                 'parent_id' => 2,
                 'order'     => 7,
                 'title'     => 'Operation log',
