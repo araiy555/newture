@@ -16,6 +16,7 @@ class admin_user extends Seeder
     public function run()
     {
         DB::table('admin_users')->insert([
+            'id' => 1,
             'username' => 'araiy',
             'password' => bcrypt('Aq!sw2de3fr4'),
             'name'     => 'Administrator',
